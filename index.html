@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Janmashtami For You ❤️</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         AUDIO
+    ====================================================== -->
+
+    <audio id="fluteMusic"
+           src="./flute.mp3"
+           loop
+           preload="auto">
+    </audio>
+
+    <audio id="krishnaVoice"
+           src="./krishna.mp3"
+           preload="auto">
+    </audio>
+
+
+    <!-- =====================================================
+         MAIN EXPERIENCE
+    ====================================================== -->
+
+    <div class="experience">
+
+        <div class="stars"></div>
+
+        <div class="moon">
+            <div class="moon-glow"></div>
+        </div>
+
+
+        <!-- =================================================
+             PAGE 1 — INTRO
+        ================================================== -->
+
+        <section class="scene intro-scene active"
+                 id="introScene">
+
+            <div class="intro-content">
+
+                <p class="tiny-text">
+                    SEPTEMBER 4
+                </p>
+
+                <h1>
+                    Hey...
+                </h1>
+
+                <p class="intro-line"
+                   id="introLine">
+                    Don't click anything yet.
+                </p>
+
+                <button class="continue-button hidden"
+                        id="continueButton"
+                        onclick="nextIntro()">
+                    Continue
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE 2 — EMOTIONAL
+        ================================================== -->
+
+        <section class="scene emotional-scene"
+                 id="emotionalScene">
+
+            <div class="emotional-content">
+
+                <p class="tiny-text">
+                    I KNOW TODAY IS DIFFERENT
+                </p>
+
+                <h2 id="emotionalText">
+                    Tonight is Janmashtami.
+                </h2>
+
+                <p class="soft-text"
+                   id="emotionalSubtext">
+                </p>
+
+                <button class="continue-button hidden"
+                        id="emotionalButton"
+                        onclick="startFestival()">
+                    I know what you're missing
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE 3 — FESTIVAL
+        ================================================== -->
+
+        <section class="festival-scene"
+                 id="festivalScene">
+
+            <div class="festival-background"></div>
+
+            <div class="festival-stars"></div>
+
+            <div class="festival-moon"></div>
+
+            <div class="peacock-feather">
+                🦚
+            </div>
+
+            <div class="festival-diya diya-one">
+
+                <div class="diya-flame"></div>
+
+                🪔
+
+            </div>
+
+            <div class="festival-diya diya-two">
+
+                <div class="diya-flame"></div>
+
+                🪔
+
+            </div>
+
+            <div class="flower flower-one">
+                🌸
+            </div>
+
+            <div class="flower flower-two">
+                🌸
+            </div>
+
+            <div class="flower flower-three">
+                🌺
+            </div>
+
+            <div class="festival-center">
+
+                <p class="festival-small">
+                    A LITTLE JANMASHTAMI MOMENT
+                </p>
+
+                <div class="timer-circle">
+
+                    <span id="timer">
+                        40
+                    </span>
+
+                </div>
+
+                <p class="timer-label"
+                   id="timerLabel">
+                    Stay here for a little while...
+                </p>
+
+                <div class="festival-message"
+                     id="festivalMessage">
+                </div>
+
+            </div>
+
+            <div class="festival-bottom">
+                🦚 For Krishna. For home. For you. ❤️
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE 4 — PRAYER
+        ================================================== -->
+
+        <section class="prayer-scene"
+                 id="prayerScene">
+
+            <div class="prayer-background"></div>
+
+            <div class="prayer-stars"></div>
+
+            <div class="divine-glow"></div>
+
+
+            <!-- =================================================
+                 KRISHNA
+            ================================================== -->
+
+            <div class="krishna-prayer"
+                 id="krishnaPrayer">
+
+                <div class="krishna-prayer-halo"></div>
+
+                <div class="krishna-light-rays"></div>
+
+                <img src="./krishna.png"
+                     alt="Krishna"
+                     class="prayer-krishna-image">
+
+            </div>
+
+
+            <!-- =================================================
+                 INITIAL PRAYER CONTENT
+            ================================================== -->
+
+            <div class="prayer-content"
+                 id="prayerContent">
+
+                <p class="prayer-tiny"
+                   id="prayerTiny">
+                    OUR LITTLE PRAYER
+                </p>
+
+                <h2 id="prayerTitle">
+                    Let's pray together.
+                </h2>
+
+                <p class="prayer-subtitle"
+                   id="prayerSubtitle">
+                    Just for a moment... forget the distance.
+                </p>
+
+
+                <!-- DIYAS -->
+
+                <div class="prayer-diyas"
+                     id="prayerDiyas">
+
+                    <div class="diya-box">
+
+                        <div class="prayer-diya"
+                             id="leftDiya">
+
+                            🪔
+
+                            <span class="prayer-flame hidden"></span>
+
+                        </div>
+
+                        <p>
+                            You
+                        </p>
+
+                    </div>
+
+
+                    <div class="diya-box">
+
+                        <div class="prayer-diya"
+                             id="rightDiya">
+
+                            🪔
+
+                            <span class="prayer-flame hidden"></span>
+
+                        </div>
+
+                        <p>
+                            Me
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button class="continue-button"
+                        id="lightPrayerButton">
+
+                    Light Our Diyas ✨
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRAY TOGETHER MESSAGE
+            ================================================== -->
+
+            <div class="pray-together-message"
+                 id="prayTogetherMessage">
+
+                <p>
+                    OUR LITTLE PRAYER
+                </p>
+
+                <h2>
+                    Let's pray together. 🪔
+                </h2>
+
+                <span>
+                    For a moment, let the distance disappear...
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 FLOWER OFFERING
+            ================================================== -->
+
+            <div class="flower-offering"
+                 id="flowerOffering">
+
+                <div class="offering-flower flower-a">
+                    🌸
+                </div>
+
+                <div class="offering-flower flower-b">
+                    🌺
+                </div>
+
+                <div class="offering-flower flower-c">
+                    🌼
+                </div>
+
+                <div class="offering-flower flower-d">
+                    🌸
+                </div>
+
+                <div class="offering-flower flower-e">
+                    🌺
+                </div>
+
+                <div class="flower-sparkle sparkle-one">
+                    ✨
+                </div>
+
+                <div class="flower-sparkle sparkle-two">
+                    ✨
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 HARATHI
+            ================================================== -->
+
+            <div class="harathi-container"
+                 id="harathiContainer">
+
+                <div class="harathi-title">
+                    <p>
+                        WITH DEVOTION
+                    </p>
+
+                    <h2>
+                        Offering with devotion. 🪔
+                    </h2>
+                </div>
+
+                <div class="harathi-glow"></div>
+
+                <div class="harathi-plate">
+
+                    <div class="harathi-flame flame-1"></div>
+
+                    <div class="harathi-flame flame-2"></div>
+
+                    <div class="harathi-flame flame-3"></div>
+
+                    <div class="harathi-flame flame-4"></div>
+
+                    <div class="harathi-center">
+                        🪔
+                    </div>
+
+                </div>
+
+                <p class="harathi-subtitle">
+                    With folded hands, for peace and happiness.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 POST HARATHI SPIRITUAL TRANSITION
+            ================================================== -->
+
+            <div class="god-talk"
+                 id="godTalk">
+
+                <div class="god-talk-symbol">
+                    🦚
+                </div>
+
+                <p id="godTalkText">
+                    Where there is devotion, there is peace.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 KRISHNA BLESSING PAGE
+            ================================================== -->
+
+            <div class="krishna-blessing-page"
+                 id="krishnaBlessingPage">
+
+                <div class="blessing-rays"></div>
+
+                <div class="blessing-light-particles">
+
+                    <span>✨</span>
+                    <span>🌸</span>
+                    <span>✨</span>
+                    <span>🌼</span>
+                    <span>✨</span>
+                    <span>🌸</span>
+                    <span>🦚</span>
+                    <span>✨</span>
+
+                </div>
+
+
+                <!-- Krishna stays visible and moves gently -->
+
+                <div class="blessing-krishna">
+
+                    <div class="blessing-krishna-glow"></div>
+
+                    <img src="./krishna.png"
+                         alt="Krishna blessing"
+                         class="blessing-krishna-image">
+
+                </div>
+
+
+                <div class="blessing-content">
+
+                    <div class="blessing-peacock">
+                        🦚
+                    </div>
+
+                    <p>
+                        KRISHNA'S BLESSINGS
+                    </p>
+
+                    <h2>
+                        May Krishna<br>
+                        always watch over you.
+                    </h2>
+
+                    <span id="blessingVoiceText">
+                        May you always be protected,
+                        peaceful and smiling.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 OLD BLESSING OVERLAY
+                 KEPT HIDDEN / UNUSED
+            ================================================== -->
+
+            <div class="krishna-blessing"
+                 id="krishnaBlessing">
+
+                <div class="blessing-light"></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FINAL PRAYER
+            ================================================== -->
+
+            <div class="prayer-final"
+                 id="prayerFinal">
+
+                <div class="final-peacock">
+                    🦚
+                </div>
+
+                <p>
+                    Krishna...
+                </p>
+
+                <h3>
+                    Keep her safe.<br>
+                    Keep her smiling.
+                </h3>
+
+                <span>
+                    Until we can celebrate together. ❤️
+                </span>
+
+            </div>
+
+
+            <div class="prayer-bottom">
+                Different places. Same prayer. 🪔
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE 5 — MEMORY
+        ================================================== -->
+
+        <section class="memory-scene"
+                 id="memoryScene">
+
+            <div class="memory-content">
+
+                <p class="tiny-text">
+                    ONE THING I WISH I COULD CHANGE
+                </p>
+
+                <div class="memory-symbol">
+    <img src="me.png"
+         alt="Radha"
+         class="memory-radha-image">
+</div>
+
+                <h2 class="memory-heading">
+                    I wish I could be there beside you.
+                </h2>
+
+                <p class="memory-subtext">
+
+                    Not through a screen.<br>
+                    Not through a message.<br>
+                    Just... there.
+
+                </p>
+
+                <button class="continue-button"
+                        onclick="showLetter()">
+
+                    There is something I want to tell you
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE 6 — LETTER
+        ================================================== -->
+
+        <section class="letter-scene"
+                 id="letterScene">
+
+            <div class="letter-container">
+
+                <div class="letter-feather">
+                    🦚
+                </div>
+
+                <p class="tiny-text">
+                    FROM MY HEART
+                </p>
+
+                <h2>
+                    For you, my Radha.
+                </h2>
+
+                <div class="letter">
+                    <div class="girlfriend-photo">
+    <div class="girlfriend-photo-glow"></div>
+
+    <img src="radha.png"
+         alt="My Radha"
+         class="girlfriend-image">
+</div>
+
+                    <p>
+                        I know you wish you were home today.
+                    </p>
+
+                    <p>
+                        I know Janmashtami means something
+                        special to you.
+                    </p>
+
+                    <p>
+                        And even though I couldn't bring you
+                        home...
+                    </p>
+
+                    <p class="highlight">
+                        I wanted to bring a little piece
+                        of home to you.
+                    </p>
+
+                    <p>
+                        So tonight, for a few moments,
+                        I wanted us to pray together.
+                    </p>
+
+                    <p>
+                        And I wanted you to feel that
+                        you're not alone.
+                    </p>
+
+                    <p class="highlight big">
+                        May Krishna always keep you smiling.
+                    </p>
+
+                    <p class="final-message">
+                        Happy Janmashtami,
+                        my Radha. 🦚❤️
+                    </p>
+
+                    <p class="ending">
+                        One day, we'll celebrate it together.
+                    </p>
+                    <!-- HER RADHA MOMENT -->
+
+
+                </div>
+
+
+                <div class="final-section">
+
+                    <div class="final-feather">
+                        🦚
+                    </div>
+
+                    <h3>
+                        Until then...
+                    </h3>
+
+                    <p>
+                        I'll always remember the things
+                        that make you happy.
+                    </p>
+
+                    <div class="heart">
+                        ❤️
+                    </div>
+
+                    <p class="signature">
+                        Always yours.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         MUSIC BUTTON
+    ====================================================== -->
+
+    <button class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()">
+
+        🔇
+
+    </button>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
