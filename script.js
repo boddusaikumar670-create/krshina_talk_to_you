@@ -1032,7 +1032,7 @@ function startKrishnaBlessing() {
            The voice remains understandable.
         */
 
-        krishnaVoice.playbackRate = 1.08;
+        krishnaVoice.playbackRate = 1.28;
 
 
         krishnaVoice.play()
