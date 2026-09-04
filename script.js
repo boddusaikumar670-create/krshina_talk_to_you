@@ -119,15 +119,16 @@ let prayerStarted = false;
 ====================================================== */
 
 /*
-   REDUCED FLUTE VOLUME
-   Original was louder.
+   NORMAL FLUTE VOLUME
 */
+
 const NORMAL_FLUTE_VOLUME = 0.22;
 
 
 /*
    VERY SOFT FLUTE DURING KRISHNA BLESSING
 */
+
 const KRISHNA_FLUTE_VOLUME = 0.04;
 
 
@@ -146,6 +147,8 @@ krishnaVoice.preload = "auto";
 krishnaVoice.pause();
 
 krishnaVoice.currentTime = 0;
+
+krishnaVoice.playbackRate = 1.0;
 
 
 /* =====================================================
@@ -593,6 +596,7 @@ function startPrayer() {
         .classList
         .remove("hide");
 
+
     prayerContent
         .classList
         .remove("prayer-lower");
@@ -647,6 +651,7 @@ function startPrayer() {
         leftDiya.querySelector(
             ".prayer-flame"
         );
+
 
     const rightFlame =
         rightDiya.querySelector(
@@ -976,14 +981,7 @@ function startKrishnaBlessing() {
 
 
     /* -----------------------------------------
-       SHOW ONLY ONE KRISHNA IMAGE
-
-       The blessing page has its own Krishna
-       image.
-
-       Hide the prayer Krishna first so the
-       blessing section never shows two Krishna
-       images together.
+       HIDE PRAYER KRISHNA
     ----------------------------------------- */
 
     krishnaPrayer
@@ -1003,7 +1001,7 @@ function startKrishnaBlessing() {
 
 
     /* -----------------------------------------
-       SHOW BLESSING PAGE
+       SHOW KRISHNA BLESSING PAGE
     ----------------------------------------- */
 
     setTimeout(function () {
@@ -1026,11 +1024,22 @@ function startKrishnaBlessing() {
         krishnaVoice.volume = 1;
 
 
+        /*
+           FIRST 60 SECONDS:
+           ONLY SLIGHTLY FASTER.
+
+           1.08 = 8% faster.
+           The voice remains understandable.
+        */
+
+        krishnaVoice.playbackRate = 1.08;
+
+
         krishnaVoice.play()
             .then(function () {
 
                 console.log(
-                    "🦚 Krishna blessing started"
+                    "🦚 Krishna blessing started at 1.08x"
                 );
 
             })
@@ -1043,6 +1052,29 @@ function startKrishnaBlessing() {
 
             });
 
+
+        /* -----------------------------------------
+           AFTER 60 SECONDS:
+           RETURN TO NORMAL SPEED
+        ----------------------------------------- */
+
+        setTimeout(function () {
+
+            /*
+               Only the playback speed changes.
+               Everything else stays untouched.
+            */
+
+            krishnaVoice.playbackRate = 1.0;
+
+
+            console.log(
+                "🦚 Krishna voice returned to normal speed"
+            );
+
+        }, 60000);
+
+
     }, 1200);
 
 
@@ -1052,6 +1084,14 @@ function startKrishnaBlessing() {
 
     krishnaVoice.onended =
         function () {
+
+            /*
+               Always reset speed before
+               continuing to the next page.
+            */
+
+            krishnaVoice.playbackRate = 1.0;
+
 
             finishKrishnaBlessing();
 
@@ -1150,6 +1190,15 @@ function finishKrishnaBlessing() {
         0;
 
 
+    /*
+       RESET PLAYBACK SPEED
+       FOR NEXT PLAY
+    */
+
+    krishnaVoice.playbackRate =
+        1.0;
+
+
     /* -----------------------------------------
        FLUTE RETURNS SMOOTHLY
     ----------------------------------------- */
@@ -1206,6 +1255,10 @@ function showMemory() {
 
     krishnaVoice.currentTime =
         0;
+
+
+    krishnaVoice.playbackRate =
+        1.0;
 
 
     if (!fluteMusic.paused) {
@@ -1487,6 +1540,16 @@ fluteMusic.volume =
 
 krishnaVoice.volume =
     1;
+
+
+/*
+   IMPORTANT:
+   Always start Krishna voice at normal
+   speed before the blessing begins.
+*/
+
+krishnaVoice.playbackRate =
+    1.0;
 
 
 console.log(
